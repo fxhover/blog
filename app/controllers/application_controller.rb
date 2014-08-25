@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  rescue_from Exception, with: :error_500
-  rescue_from ActiveRecord::RecordNotFound, with: :error_404
+  rescue_from Exception, with: :error_500 unless Rails.env.development?
+  rescue_from ActiveRecord::RecordNotFound, with: :error_404 unless Rails.env.development?
 
   def error_500
     render file: File.join(Rails.root, 'public/500.html'), status: 500, layout: false
