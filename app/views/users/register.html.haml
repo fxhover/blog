@@ -1,0 +1,12 @@
+%section.content
+  .form-unit
+    = link_to root_path, class: 'brand' do
+      %h1 Blog
+    %h3 注册账号
+    - errors = @user.errors.full_messages
+    - if errors.any?
+      .alert.alert-danger
+        %a.close{"data-dismiss"=>"alert"} &times;
+        %span
+          = errors.first
+    = render partial: 'form', locals: {action: 'register'}

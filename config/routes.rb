@@ -54,8 +54,21 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :blogs do
+  resources :blogs, only:[:index]
+  root "blogs#index"
+
+  resources :articles do
 
   end
-  root "blogs#index"
+
+  get 'register' => 'users#register'
+  get 'login' => 'users#login'
+  resources :users do
+    collection do
+      get 'register'
+      post 'register_confirm'
+      get 'login'
+      post 'login_confirm'
+    end
+  end
 end

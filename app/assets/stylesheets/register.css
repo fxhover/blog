@@ -1,0 +1,751 @@
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    background-repeat: repeat-x;
+    background-position-y: 150px;
+    background-position-x: -500px;
+}
+
+a > img{
+    display:none;
+}
+
+/*overwrite bt style*/
+.form-control:focus {
+    border-color: #a6a6a6;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.content {
+}
+
+.content > h1{
+    height: 1px;
+    text-indent: -9999px;
+}
+
+/* ---------------------- */
+.brand {
+    display: block;
+    margin: auto auto;
+    width: 250px;
+    height: 30px;
+    background-size: 185px 36px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.brand:hover {
+    text-decoration: none;
+}
+
+.brand-third {
+    display: block;
+    margin: 0px auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.brand-xdf h1,.brand-github h1, .brand-evernote h1 {
+    text-indent: -9999px;
+    margin-top: 0px;
+}
+
+.brand h1 {
+    margin-top: 0px;
+    text-align: center;
+}
+
+
+.binding > div {
+    float: left;
+    height: 40px;
+    background-repeat: no-repeat;
+}
+
+.binding .cooperator.github{
+    width: 92px;
+    background-image: url(https://dn-st.qbox.me/pages/images/github@2x.jpg);
+    background-position: left center;
+    background-size: 92px 36px;
+}
+
+.binding .cooperator.mingdao{
+    width: 60px;
+    background-image: url(https://dn-st.qbox.me/pages/images/mingdao@2x.jpg);
+    background-position: -4px bottom;
+    background-size: 60px 36px;
+}
+
+.binding .arrow{
+    width: 27px;
+    height: 38px;
+    margin-left: 16px;
+    background-image: url(https://dn-st.qbox.me/pages/images/arrow@2x.png);
+    background-position: left center;
+    background-size: 27px 25px;
+}
+
+.binding .teambition {
+    width: 185px;
+    margin-left: 20px;
+    background-position: left top;
+    background-size: 185px 36px;
+}
+
+.slide-wrapper {
+    width: 300px;
+    overflow: hidden;
+}
+
+.slide-wrapper .slider{
+    position: relative;
+    width: 620px;
+    min-height: 500px;
+    /*white-space: nowrap;*/
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -moz-transition: -moz-transform 0.3s ease-in-out;
+    -o-transition: -o-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slide-wrapper .slider.active{
+    -webkit-transform: translate3d(-320px,0,0);
+    -moz-transform: translate3d(-320px,0,0);
+    -o-transform: translate3d(-320px,0,0);
+    transform: translate3d(-320px,0,0);
+}
+
+.slide-wrapper .slider .form-unit.create{
+    position: absolute;
+    left: 0;
+    opacity: 100;
+}
+
+.slide-wrapper .slider.active .form-unit.create{
+    opacity: 0;
+}
+
+.slide-wrapper .slider .form-unit.bind{
+    opacity: 0;
+    position: absolute;
+    left: 320px;
+}
+
+.slide-wrapper .slider.active .form-unit.bind{
+    opacity: 100;
+}
+
+.slide-wrapper .form-unit{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    -webkit-transition: opacity 0.6s ease-in-out;
+    -moz-transition: opacity 0.6s ease-in-out;
+    -o-transition: opacity 0.6s ease-in-out;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.form-unit {
+    width: 480px;
+    margin: 30px auto;
+    padding: 50px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, .04);
+    background-color: white;
+}
+
+.form-unit > h2 {
+    text-align: center;
+    font-family: 'Open Sans', arial;
+    -webkit-font-smoothing: antialiased; color: #555;
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.form-unit > h3 {
+    text-align: center;
+    font-family: 'Open Sans', arial;
+    -webkit-font-smoothing: antialiased;
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 25px 0;
+}
+
+
+.form-unit.info{
+    width: 500px;
+    margin-top: 100px;
+    text-align: left;
+}
+.form-unit.info .success-icon{
+    /*display: inline-block;*/
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url('https://dn-st.qbox.me/pages/images/success-info-icon.png');
+    background-repeat: no-repeat;
+    background-position: left 23px;
+    background-size: 70px 71px;
+}
+.form-unit.info .error-icon{
+    /*display: inline-block;*/
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url('https://dn-st.qbox.me/pages/images/error-info-icon.png');
+    background-repeat: no-repeat;
+    background-position: left 23px;
+    background-size: 70px 71px;
+}
+
+.form-unit.info .info-content{
+    float: left;
+    width: 400px;
+}
+.form-unit .info-content h1{
+    margin-top: 20px;
+    font-size: 34px;
+    color: #66819d;
+    font-weight: normal;
+}
+.form-unit .info-content h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    font-family: Helvetica;
+    color: #a7b5c4;
+}
+
+.form-unit .button-wrapper .btn{
+    display: inline-block;
+    width: 160px;
+    height: 40px;
+    margin-right: 10px;
+    padding: 0;
+    line-height: 40px;
+    font-size: 16px;
+    color: #66819d;
+}
+
+.form-unit .button-wrapper .btn-primary{
+    color: #fff;
+    text-shadow: 0 1px #111;
+}
+.form-unit .error-block{
+    position: relative;
+    display: inline-block;
+    padding: 5px 7px;
+    margin-bottom: 13px;
+    color: #d58a8a;
+    border: 1px solid #d58a8a;
+    border-radius: 3px;
+    background-color: #fff4f4;
+}
+
+.third-accounts-login {
+    margin-top: 30px;
+    margin-bottom: -20px;
+    color: #aaa;
+}
+
+.third-accounts-login a {
+    text-indent: -10000px;
+    display: inline-block;
+    margin-right: 10px;
+    height: 22px;
+    width: 22px;
+}
+
+.third-accounts-login a.github {
+    background-position:0 -66px;
+}
+
+.third-accounts-login a.evernote {
+    background-position:0 -22px;
+}
+
+.third-accounts-login a.github:hover {
+    background-position:0 -44px;
+}
+
+.third-accounts-login a.evernote:hover {
+    background-position:0 0px;
+}
+
+.production-list {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.production-list ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.production-list li {
+    display: inline-block;
+}
+
+.production-list li a {
+    text-decoration: none;
+}
+
+.production-list li {
+    display: inline-block;
+    width: 230px;
+}
+
+.production-list li div {
+    text-indent: -9999px;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    background-size: 80px 40px;
+    margin: auto;
+}
+
+.production-list li p {
+    color: gray;
+}
+
+.production-list li h4 {
+    color: #383838;
+}
+
+.production-list .teambition-app, .production-list .today-app {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: box-shadow ease-in-out 218ms,-webkit-transform 218ms ease-in-out;
+    transition: box-shadow ease-in-out 218ms,transform 218ms ease-in-out;
+}
+
+.production-list .teambition-app:hover, .production-list .today-app:hover {
+    -webkit-transform: translate3d(0, -3px, 0);
+    transform: translate3d(0, -3px, 0);
+}
+
+.production-list .teambition-app {
+    box-shadow: 0 0 3px #ccc;
+    border-radius: 3px;
+}
+
+.production-list .today-app {
+    background-position: -40px 0;
+}
+
+.auth-form .form-field {
+    position: relative;
+}
+
+.auth-form .form-field .icon {
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    left: 12px;
+    color: #c0c0c0;
+
+}
+
+.auth-form .form-control {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.auth-form input {
+    height: 48px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.auth-form input:focus + .icon {
+    color: gray;
+}
+
+
+
+.auth-form .email {
+    padding-left: 50px;
+}
+
+
+.auth-form .password {
+    padding-left: 50px;
+}
+
+.auth-form .name {
+    padding-left: 50px;
+}
+
+.auth-form label {
+    position: absolute;
+    left: 350px;
+    top: 50px;
+    color: #b94a48;
+}
+.auth-form .btn {
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 4px;
+    width: 100%;
+    margin: 10px 0;
+    display: inline-block;
+    outline: none;
+}
+.auth-form .btn:focus {
+    outline: none;
+}
+/*认证 授权*/
+.authorize-unit .btn {
+    width: 49%;
+    display:inline-block;
+}
+
+.authorize-unit .btn-link {
+    color: #aaa;
+}
+
+.authorize-unit  .authorize-data {
+    color: #838383;
+    text-align: center;
+    margin-top: -15px;
+    margin-bottom: :;0px;
+}
+
+.authorize-unit .avatar {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-size: 100px 100px;
+    background-color: #eee;
+    margin: 30px auto;
+    margin-bottom: 0px;
+}
+
+.authorize-unit h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.authorize-unit .account-email {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.auth-form .action-wrapper > a,
+.auth-form .action-wrapper > span {
+    color: #aaa;
+    font-size: 14px;
+}
+.action-wrapper {
+    margin-top: 10px;
+    text-align: right;
+}
+.action-wrapper > a:hover {
+    text-decoration: none;
+}
+
+.cooperator-wrapper{
+    position: absolute;
+    left: 400px;
+    top: 200px;
+    padding-left: 30px;
+}
+
+.cooperator-wrapper::before{
+    content: '';
+    position: absolute;
+    height: 130px;
+    width: 1px;
+    background-color: #ddd;
+    left: 0;
+    top: 30px;
+}
+
+.cooperator-wrapper > p{
+    opacity: 0;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: normal;
+    color: #a6a6a6;
+}
+
+.cooperator-wrapper a.btn{
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 34px;
+    margin-bottom: 30px;
+    color: #808080;
+    text-align: left;
+    background-image: -webkit-linear-gradient(top, #fefefe, #fcfcfc);
+    background-image: -moz-linear-gradient(top, #fefefe, #fcfcfc);
+    background-image: -o-linear-gradient(top, #fefefe, #fcfcfc);
+    background-image: -linear-gradient(top, #fefefe, #fcfcfc);
+
+}
+
+.cooperator-wrapper a.btn:hover{
+    border: 1px solid #bbb;
+}
+
+.cooperator-wrapper a.btn i.icon{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: -4px 15px 0 5px;
+    background-size: 25px 25px;
+    vertical-align: middle;
+}
+
+.cooperator-wrapper a.btn i.icon.github-icon{
+    background-image: url(https://dn-st.qbox.me/pages/images/icon-github@2x.jpg);
+}
+
+.cooperator-wrapper a.btn i.icon.mingdao-icon{
+    background-image: url(https://dn-st.qbox.me/pages/images/icon-mingdao@2x.jpg);
+}
+
+/* members list */
+
+.member-list-container {
+    margin-top: 30px;
+}
+.member-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.member {
+    position: relative;
+    padding-left: 50px;
+    margin-top: 26px;
+}
+
+.member div {
+    position: absolute;
+    left: 0;
+}
+
+.member h5 {
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+
+.member p {
+    color: #a0a0a0;
+}
+
+.img-36 {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-size: 36px 36px;
+    background-color: #eee
+}
+
+.img-48 {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-size: 48px 48px;
+    background-color: #eee
+}
+
+.img-60 {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-size: 60px 60px;
+    background-color: #eee
+}
+
+.use-loged-account {
+    color: #838383;
+    margin-top: 30px;
+    margin-bottom: 28px;
+}
+
+
+.yourself {
+    margin-bottom: 20px;
+    background-color: #f5f6f7;
+    width: 100%;
+    padding: 20px;
+    padding-left: 100px;
+    border-radius: 4px;
+}
+
+.yourself .avatar {
+    left: 20px;
+}
+
+.yourself h4 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.notify-box {
+    width: 700px;
+    margin: 200px auto;
+    background-color: white;
+    height: 250px;
+    padding: 55px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, .05);
+    position: relative;
+}
+
+.notify-box .btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 2px;
+    margin: 10px 0;
+}
+
+
+.notify-box .info,
+.notify-box .success,
+.notify-box .error {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+}
+
+.notify-box .info .icon,
+.notify-box .success .icon,
+.notify-box .error .icon {
+    font-size: 80px;
+    position: absolute;
+    top: -20px;
+}
+
+.notify-box .info .icon {
+    color: #428bca;
+}
+
+.notify-box .success .icon {
+    color: #6AB83A;
+}
+
+.notify-box .error .icon {
+    color: #d9534f;
+}
+
+.notify-box .message {
+    margin-left: 135px;
+}
+
+.notify-box .message h3 {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.notify-box .message p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #838383;
+}
+
+@media (max-width: 650px) {
+
+    .notify-box {
+        width: auto;
+        margin: 100px 30px;
+        height:auto;
+        background-color: white;
+        padding: 10px;
+        box-shadow: none;
+        position: relative;
+        min-width: 240px;
+    }
+
+    .notify-box .info,
+    .notify-box .success,
+    .notify-box .error {
+        height: 24px;
+        width: 24px;
+    }
+
+    .notify-box .info .icon,
+    .notify-box .success .icon,
+    .notify-box .error .icon {
+        font-size: 24px;
+        top: 0px;
+    }
+
+    .notify-box .message {
+        margin-left: 0px;
+    }
+
+    .notify-box .message h3 {
+        margin-top: 8px;
+        margin-bottom: 15px;
+        margin-left: 30px;
+        font-size: 18px;
+    }
+
+    .notify-box .message p {
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: #838383;
+    }
+
+    .notify-box .message .btn {
+        display: block;
+        margin: 10px auto;
+        width: 60%;
+    }
+}
+
+
+@media (max-width: 580px) {
+
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        background-position: center bottom;
+        background-size: 200%;
+    }
+
+    .form-unit {
+        width: 250px;
+        padding: 0;
+        box-shadow: none;
+        background-color: none;
+        margin-top: 100px;
+    }
+
+    .form-unit h3 {
+        font-size: 15px;
+    }
+
+    .production-list {
+        display: none;
+    }
+
+}
+
+@media (min-height: 800px) {
+    body {
+        background-position-y: 250px;
+    }
+    .form-unit {
+        margin: 110px auto;
+    }
+}
+
+.btn-lg {
+    width: 100%;
+}

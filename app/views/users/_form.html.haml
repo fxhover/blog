@@ -1,0 +1,18 @@
+- method = action == 'update' ? 'put' : 'post'
+- submit_url = case action; when 'register'; register_confirm_users_path; when 'login'; login_confirm_users_path; when 'update'; user_path(@user); end
+= form_for @user, method: method, url: submit_url, role: 'form' do |f|
+  .form-field.form-group
+    = f.text_field :username, placeholder: '用户名', class: 'form-control username', required: true
+    %span.icon.icon-user-bold
+  .form-field.form-group
+    = f.text_field :email, placeholder: '邮箱', class: 'form-control email', required: true
+    %span.icon.icon-envelope-bold
+  .form-field.form-group
+    = f.password_field :password, placeholder: '密码，最少6位', class: 'form-control password', required: true
+    %span.icon.icon-lock
+  .form-field.form-group
+    = f.password_field :password_confirmation, placeholder: '确认密码', class: 'form-control password', required: true
+    %span.icon.icon-lock
+  = submit_tag '注册', class: 'btn btn-primary btn-lg'
+  .action-wrapper
+    = link_to '已有账号？', login_path

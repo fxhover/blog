@@ -1,0 +1,26 @@
+%section.content
+  .form-unit
+    = link_to root_path, class: 'brand' do
+      %h1 Blog
+    %h3 用户登录
+    - errors = @user ? @user.errors.full_messages : []
+    - if errors.any?
+      .alert.alert-danger
+        %a.close{"data-dismiss"=>"alert"} &times;
+        %span
+          = errors.first
+    - elsif flash[:error].present?
+      .alert.alert-danger
+        %a.close{"data-dismiss"=>"alert"} &times;
+        %span= flash[:error]
+    = form_for :user, url: login_confirm_users_path, role: 'form' do |f|
+      .form-field.form-group
+        = f.text_field :username, placeholder: '用户名', class: 'form-control username', required: true
+        %span.icon.icon-user-bold
+      .form-field.form-group
+        = f.password_field :password, placeholder: '密码', class: 'form-control password', required: true
+        %span.icon.icon-lock
+        %span.icon.icon-lock
+      = submit_tag '登录', class: 'btn btn-primary btn-lg'
+      .action-wrapper
+        = link_to '没有账号？', register_path

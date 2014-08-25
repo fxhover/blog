@@ -14,3 +14,24 @@
  *= require_self
  *= require bootstrap
  */
+
+.nav li a {
+    display: block;
+    position: relative;
+}
+.navbar-header a {
+    width: 100px;
+}
+.site-header .navbar-nav li {
+    margin-left: 20px;
+}
+.site-header .navbar-button li {
+    float: left;
+}
+.site-header .navbar-button li a {
+    width: 80px;
+    margin-top: 7px;
+}
+ul {
+    list-style: none outside none;
+}
