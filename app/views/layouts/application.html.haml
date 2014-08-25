@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title= Settings.blog.title
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  %body
+    .container.wrap_body
+      = yield
+      .alert.alert-warning
+        %a.close{"data-dismiss"=>"alert"} &times;
+        %span
+          fdsafdsafdsfsd

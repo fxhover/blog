@@ -1,0 +1,10 @@
+#encoding: utf-8
+defaults: &defaults
+  blog:
+    aritcle_page_size: 10
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults

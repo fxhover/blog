@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3752118757">
+    <data-source source="LOCAL" name="Rails blog: development" uuid="b362a7c0-00d8-4c37-8842-4d62ff557da5">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/blog_development</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails blog: test" uuid="c1e8a29b-cdd2-4f5b-bf83-c1d6b358814c">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/blog_test</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails blog: production" uuid="5949d4c7-406f-4c49-a8e3-5c0d06149aa8">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/blog_production</jdbc-url>
+      <user-name>blog</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
