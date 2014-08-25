@@ -1,9 +1,14 @@
 !!!
 %html
   %head
+    %meta{charset: "utf-8"}
+    %meta{"http-equiv"=>"X-UA-Compatible", "content"=>"IE=edge"}
+    %meta{"name"=>"viewport", "content"=>"width=device-width, initial-scale=1"}
     %title= Settings.blog.title
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
+    = javascript_include_tag 'http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js'
+    = javascript_include_tag 'http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js'
     = csrf_meta_tags
 
   %body

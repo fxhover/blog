@@ -1,7 +1,7 @@
 #encoding: utf-8
 class BlogsController < ApplicationController
   def index
-
+    render text: 'welcome.'
   end
 
   def new
