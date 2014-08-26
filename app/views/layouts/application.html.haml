@@ -16,11 +16,13 @@
       %nav.navbar.navbar-default{role:'navigation'}
         .container-fluid
           .navbar-header
-            = link_to 'Home', root_path, class: 'navbar-brand'
+            = link_to 'Blog首页', root_path, class: 'navbar-brand'
           .collspse.navbar-collapse.site-header
             %ul.nav.navbar-nav
               %li.active
                 = link_to '文章列表', '#'
+              %li
+                = link_to '分类浏览', '#'
             %ul.nav.navbar-nav.navbar-right
               - if is_logined?
                 %li.dropdown

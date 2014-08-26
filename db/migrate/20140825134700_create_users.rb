@@ -10,5 +10,7 @@ class CreateUsers < ActiveRecord::Migration
       t.datetime :last_reply_time
       t.timestamps
     end
+    add_index :users, :username
+    add_index :users, :email
   end
 end

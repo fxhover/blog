@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def referer
-    request.env['HTTP_REFERER']
+    request.env['HTTP_REFERER'] || root_path
   end
 
   def is_logined?

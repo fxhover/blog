@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#添加管理员
+admin = User.new username: 'admin', password: 'adminqwe', password_confirmation: 'adminqwe', email: '736698959@qq.com', admin: true
+puts admin.save! ? 'success.' : 'fail!'

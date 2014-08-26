@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def register_confirm
     @user = User.new params.require(:user).permit(:username,:email,:password,:password_confirmation)
     if @user.save
-      login @user
+      to_login @user
       redirect_to root_path
     else
       render 'register', layout: 'register'
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    redirect_to login_path(from: referer) unless params[:from].present?
+    return redirect_to(login_path(from: referer)) unless params[:from].present?
     @user = User.new
     render 'login', layout: 'register'
   end
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def login_confirm
     @user = User.find_by username: params[:user][:username]
     if @user && @user.check_password(params[:user][:password])
-      login @user
+      to_login @user
       @user.update_attribute :last_login_time, DateTime.now
       redirect_to (params[:from].present? ? params[:from] : root_path)
     else
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 
   protected
 
-  def login(user)
+  def to_login(user)
     session[:user_id] = user.id
   end
 end

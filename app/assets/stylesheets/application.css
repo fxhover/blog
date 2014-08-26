@@ -19,9 +19,6 @@
     display: block;
     position: relative;
 }
-.navbar-header a {
-    width: 100px;
-}
 .site-header .navbar-nav li {
     margin-left: 20px;
 }
@@ -44,4 +41,9 @@ ul {
     margin-right: 2px;
     width: 40px;
     height: 40px;
+}
+
+.active a {
+    color: #428bca !important;
+    background-color: #eeeeee !important;
 }
