@@ -1,0 +1,12 @@
+#encoding: utf-8
+zh-CN:
+  activerecord:
+    models:
+      article: '文章'
+    attributes:
+      article:
+        title: '标题'
+        tags: '标签'
+        category_id: '分类'
+        source: '来源'
+        content: '内容'

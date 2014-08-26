@@ -8,4 +8,8 @@
 
 #添加管理员
 admin = User.new username: 'admin', password: 'adminqwe', password_confirmation: 'adminqwe', email: '736698959@qq.com', admin: true
-puts admin.save! ? 'success.' : 'fail!'
+puts admin.save! ? 'add admin success.' : 'add admin fail!'
+
+#添加一个默认分类
+category = Category.new name: '默认'
+puts category.save! ? 'add category success.' : 'add category fail!'

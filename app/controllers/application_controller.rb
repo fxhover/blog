@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :is_logined?
+  helper_method :current_user, :is_logined?, :current_user_is_admin?, :get_categories_options
 
   rescue_from Exception, with: :error_500 unless Rails.env.development?
   rescue_from ActiveRecord::RecordNotFound, with: :error_404 unless Rails.env.development?
@@ -18,6 +18,16 @@ class ApplicationController < ActionController::Base
       redirect_to logout_path(referer) unless @current_user
     end
     @current_user
+  end
+
+  def current_user_is_admin?
+    @current_user && @current_user.admin
+  end
+
+  def get_categories_options
+    options = []
+    Category.all.each {|c| options << [c.name, c.id]}
+    options
   end
 
   def referer

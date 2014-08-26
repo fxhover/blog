@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140826093700) do
+ActiveRecord::Schema.define(version: 20140826132200) do
 
   create_table "articles", force: true do |t|
     t.integer  "user_id"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20140826093700) do
     t.integer  "comments_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "source"
+    t.integer  "category_id"
   end
 
   add_index "articles", ["comments_count"], name: "index_articles_on_comments_count", using: :btree

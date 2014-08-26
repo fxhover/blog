@@ -1,0 +1,25 @@
+- if @article.new_record?
+  - url = articles_path
+- else
+  - url = article_path(@article)
+= form_for @article, role: 'form' do |f|
+  .form-group
+    %label{for: 'article_title'} 文章标题
+    = f.text_field :title, placeholder: '文章标题', class: 'form-control'
+  .form-group
+    %label{for: 'article_category_id'} 文章分类
+    = select_tag "article[category_id]", options_for_select(get_categories_options, @article.category_id), include_blank: true, class: 'form-control'
+    或者新建一个分类：
+    = f.text_field :category_name, placeholder: '分类名称', class: 'form-control'
+  .form-group
+    %label{for: 'article_tags'} 标签
+    = f.text_field :tags, placeholder: '文章标签，多个用英文“,”隔开', class: 'form-control'
+  .form-group
+    %label{for: 'article_source'} 文章来源
+    = f.text_field :source, placeholder: '文章来源，为空则为原创', class: 'form-control'
+  .form-group
+    %label{for: 'article_content'} 文章内容
+    = f.text_area :content, placeholder: '文章内容', class: 'form-control'
+  .form-group
+    = f.submit '提交', class: 'btn btn-success btn-lg btn-block'
+

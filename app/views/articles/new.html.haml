@@ -1,0 +1,9 @@
+
+%h3 撰写博文
+- errors = @article.errors.full_messages
+- if errors.any?
+  .alert.alert-danger
+    %a.close{"data-dismiss"=>"alert"} &times;
+    %span
+      = errors.first
+= render partial: 'form'
