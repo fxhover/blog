@@ -1,0 +1,9 @@
+# coding: utf-8
+zh-CN:
+  views:
+    pagination:
+      first: "首页"
+      previous: "上一页"
+      truncate: "..."
+      next: "下一页"
+      last: "末页"

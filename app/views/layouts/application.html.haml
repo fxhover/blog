@@ -19,8 +19,8 @@
             = link_to 'Blog首页', root_path, class: 'navbar-brand'
           .collspse.navbar-collapse.site-header
             %ul.nav.navbar-nav
-              %li.active
-                = link_to '文章列表', '#'
+              %li{class: "#{'active' if params[:controller] == 'articles' && params[:action] == 'index'}"}
+                = link_to '文章列表', articles_path
               %li
                 = link_to '分类浏览', '#'
             %ul.nav.navbar-nav.navbar-right
@@ -35,6 +35,9 @@
                     %li
                       = link_to '#' do
                         = gravatar_image_tag @current_user.email, size: 100, alt: @current_user.username, gravatar: {default: 'http://www.gravatar.com/avatar/0c821f675f132d790b3f25e79da739a7'}
+                    - if current_user_is_admin?
+                      %li
+                        = link_to '写博客', new_article_path
                     %li
                       = link_to '退出', logout_path
               - else

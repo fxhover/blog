@@ -3,6 +3,11 @@ class ArticlesController < ApplicationController
   before_filter :check_current_user_is_admin, only: [:new, :create, :edit, :update]
   before_filter :article, only: [:show, :edit, :update, :destroy]
 
+  def index
+    res = Article
+    @articles = res.order('created_at desc').page(params[:page]).per(2)
+  end
+
   def new
     @article = Article.new
   end
