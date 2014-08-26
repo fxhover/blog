@@ -63,12 +63,14 @@ Rails.application.routes.draw do
 
   get 'register' => 'users#register'
   get 'login' => 'users#login'
+  get 'logout' => 'users#logout'
   resources :users do
     collection do
       get 'register'
       post 'register_confirm'
       get 'login'
       post 'login_confirm'
+      get 'logout'
     end
   end
 end

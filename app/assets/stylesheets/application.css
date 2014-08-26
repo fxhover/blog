@@ -35,3 +35,6 @@
 ul {
     list-style: none outside none;
 }
+#keyword {
+    width: 150px;
+}
