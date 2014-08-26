@@ -1,4 +1,17 @@
-- @articles.each do |article|
-  = render partial: 'article', locals: {article: article}
+.row.inner.edge
+  .col-md-9.layout-main
+    .tab-nav
+    -#  %h2.common-title 博文列表
+    %nav.sub-tab.text-right
+      %span.icon.icon-circle-arrow-down(data-toggle="tooltip" data-placement="bottom" title="排序")
+      = link_to '按时间', '#', class: 'current'
+      = link_to '按称赞', '#', class: ''
+      = link_to '按回复数', '#', class: ''
+    .article-list
+      - @articles.each do |article|
+        = render partial: 'article', locals: {article: article}
 
-= paginate @articles
+    = paginate @articles
+
+  .sidebar.col-md-3.layout-secondary.hidden-xs.hidden-sm
+    = render partial: 'article_sidebar'

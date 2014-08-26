@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   def get_categories_options
     options = []
-    Category.all.each {|c| options << [c.name, c.id]}
+    Category.order('articles_count desc').each {|c| options << [c.name, c.id]}
     options
   end
 

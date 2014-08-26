@@ -1,0 +1,10 @@
+.text-left.ui-sortable
+  %h4 文章分类
+  %ul.nav.bs-docs-sidenav
+    - get_categories.each do |category|
+      %li
+        = link_to articles_path(c: category.id) do
+          = category.name
+          %span.badge
+            = "#{category.articles_count || 0}篇"
+

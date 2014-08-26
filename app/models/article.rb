@@ -2,6 +2,7 @@
 class Article < ActiveRecord::Base
   attr_accessor :category_name
   belongs_to :category, counter_cache: 'articles_count'
+  belongs_to :user
 
   validates :title, length: {minimum: 10, maximum: 50}
   validates :tags, presence: true

@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  *= require bootstrap
+ *= require _font-awesome
+ *= require _font-awesome-ie7.min
  */
 
 .nav li a {
@@ -50,6 +52,48 @@ ul {
 
 #article_content {
     height: 400px;
+}
+
+.article_content {
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-top: 10px;
+    padding: 5px 20px 5px 20px;
+}
+
+.sidebar {
+    padding-left: 50px !important;
+}
+
+body {
+    background-color: #f5f5f5 !important;
+}
+
+.article_content .label {
+    padding: 4px 10px 4px 10px !important;
+    margin-right: 10px !important;
+}
+
+.article_content p {
+    margin-top: 20px;
+}
+
+.article_content h3 {
+    font-size: 23px;
+    color: green;
+}
+
+.article_content p .icon {
+    margin-right: 20px;
+}
+
+.sub-tab a {
+    margin-left: 10px;
+}
+
+.sub-tab a:hover {
+    text-decoration: none;
 }
 
 
