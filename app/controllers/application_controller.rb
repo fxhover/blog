@@ -9,9 +9,15 @@ class ApplicationController < ActionController::Base
   rescue_from Exception, with: :error_500 unless Rails.env.development?
   rescue_from ActiveRecord::RecordNotFound, with: :error_404 unless Rails.env.development?
 
+  before_filter :current_user
+
   def current_user
     @current_user = nil
-    @current_user = User.find(session[:user_id]) if session[:user_id].present?
+    if session[:user_id].present?
+      @current_user = User.find(session[:user_id])
+      redirect_to logout_path(referer) unless @current_user
+    end
+    @current_user
   end
 
   def referer

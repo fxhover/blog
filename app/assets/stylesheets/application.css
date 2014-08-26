@@ -36,5 +36,12 @@ ul {
     list-style: none outside none;
 }
 #keyword {
-    width: 150px;
+    width: 170px;
+}
+
+.navbar-avatar img {
+    margin-top: 4px;
+    margin-right: 2px;
+    width: 40px;
+    height: 40px;
 }

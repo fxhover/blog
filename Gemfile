@@ -44,6 +44,9 @@ group :development do
   gem 'thin'
 end
 
+#Avatar
+gem 'gravatar_image_tag'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -24,12 +24,15 @@
             %ul.nav.navbar-nav.navbar-right
               - if is_logined?
                 %li.dropdown
+                  .navbar-header.navbar-avatar
+                    = avatar @current_user
                   = link_to '#', class: 'dropdown-toggle pull-right', "data-toggle"=>"dropdown" do
-                    = current_user.username
+                    = @current_user.username
                     %span.caret
                   %ul.dropdown-menu{role: 'menu'}
                     %li
-                      = link_to '个人信息', '#'
+                      = link_to '#' do
+                        = gravatar_image_tag @current_user.email, size: 100, alt: @current_user.username, gravatar: {default: 'http://www.gravatar.com/avatar/0c821f675f132d790b3f25e79da739a7'}
                     %li
                       = link_to '退出', logout_path
               - else
