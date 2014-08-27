@@ -1,3 +1,6 @@
+- unless @comments.present?
+  .jumbotron
+    %h2 还没有评论～
 - @comments.each do |comment|
   = render partial: 'comment', locals: {comment: comment}
 

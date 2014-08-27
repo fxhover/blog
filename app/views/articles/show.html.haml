@@ -46,5 +46,11 @@
   #comments_content
     = render partial: 'comments'
 
-  %p
-    = render partial: 'comment_form'
+  - if is_logined?
+    %p
+      = render partial: 'comment_form'
+  - else
+    .jumbotron
+      %h2
+        = link_to '登录', login_path
+        后可评论
