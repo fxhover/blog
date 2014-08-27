@@ -49,7 +49,11 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    render text: @article.to_json.inspect
+
+  end
+
+  def star
+
   end
 
   protected

@@ -58,7 +58,9 @@ Rails.application.routes.draw do
   root "blogs#index"
 
   resources :articles do
-
+    member do
+      post 'star'
+    end
   end
 
   get 'register' => 'users#register'

@@ -9,11 +9,11 @@
   %p
     %span.icon.icon-time(data-toggle="tooltip" data-placement="bottom" title="发表时间")
       = article.updated_at.strftime('%Y-%m-%d %H:%M')
-    %span.icon.icon-eye-open
+    %span.icon.icon-eye-open(data-toggle="tooltip" data-placement="bottom" title="浏览数")
       = article.view_count || 0
-    %span.icon.icon-thumbs-up
+    %span.icon.icon-thumbs-up(data-toggle="tooltip" data-placement="bottom" title="称赞数")
       = article.star_count || 0
-    %span.icon.icon-comments
+    %span.icon.icon-comments(data-toggle="tooltip" data-placement="bottom" title="评论数")
       = article.comments_count || 0
   - unless article.source.empty?
     %p
