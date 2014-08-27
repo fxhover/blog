@@ -61,6 +61,8 @@ Rails.application.routes.draw do
     member do
       post 'star'
     end
+
+    resources :comments
   end
 
   get 'register' => 'users#register'

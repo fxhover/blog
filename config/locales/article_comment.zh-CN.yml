@@ -1,0 +1,8 @@
+#encoding: utf-8
+zh-CN:
+  activerecord:
+    models:
+      article_comment: '评论'
+    attributes:
+      article_comment:
+        content: '评论内容'

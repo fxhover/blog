@@ -1,8 +1,16 @@
 .article_show
+  = render partial: 'error'
   %h3.article-title
     - if @article.source.empty?
       [原创]
     = @article.title
+    - if current_user_is_admin?
+      = link_to edit_article_path(@article) do
+        %span.icon.icon-edit
+      = link_to article_path(@article), method: 'delete' do
+        %span.icon.icon-trash
+
+
   %p
     - get_tags(@article).each do |tag|
       %span.label.label-default
@@ -28,3 +36,6 @@
 
   %p
     = @article.content
+
+  %p
+    = render partial: 'comment_form'

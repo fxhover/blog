@@ -50,6 +50,35 @@ class ArticlesController < ApplicationController
 
   def show
     @article.add_view request.remote_ip, @current_user, params.inspect
+    @comment = @article.comments.new
+  end
+
+  def edit
+
+  end
+
+  def update
+    attributes = params.require(:article).permit(:title, :tags, :source, :content)
+    if params[:article].present? && params[:article][:category_id].present?
+      attributes[:category_id] = params[:article][:category_id]
+    elsif params[:article].present? && params[:article][:category_name].present?
+      category = Category.find_or_create params[:article][:category_name]
+      attributes[:category_id] = category.id
+    end
+    if @article.update_attributes attributes
+      redirect_to article_path(@article)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    if @article.destroy
+      redirect_to articles_path
+    else
+      flash[:error] = '删除失败'
+      redirect_to article_path(@article)
+    end
   end
 
   def star

@@ -1,7 +1,3 @@
-- if @article.new_record?
-  - url = articles_path
-- else
-  - url = article_path(@article)
 = form_for @article, role: 'form' do |f|
   .form-group
     %label{for: 'article_title'} 文章标题

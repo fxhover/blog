@@ -1,0 +1,11 @@
+- errors = @article.errors.full_messages
+- if errors.any?
+  .alert.alert-danger
+    %a.close{"data-dismiss"=>"alert"} &times;
+    %span
+      = errors.first
+- elsif flash[:error].present?
+  .alert.alert-danger
+    %a.close{"data-dismiss"=>"alert"} &times;
+    %span
+      = flash[:error]

@@ -131,4 +131,9 @@ a.disabled:hover {
     cursor: none;
 }
 
+h3 .icon {
+    font-size: 18px;
+    margin-left: 15px;
+}
+
 

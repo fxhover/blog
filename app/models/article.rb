@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
   belongs_to :user
   has_many :article_stars
   has_many :article_views
+  has_many :comments, class_name: 'ArticleComment'
 
   validates :title, length: {minimum: 10, maximum: 50}
   validates :tags, presence: true

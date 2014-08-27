@@ -8,7 +8,7 @@
       = tag
   %p
     %span.icon.icon-time(data-toggle="tooltip" data-placement="bottom" title="发表时间")
-      = article.updated_at.strftime('%Y-%m-%d %H:%M')
+      = article.updated_at.strftime('%Y-%m-%d')
     %span.icon.icon-eye-open(data-toggle="tooltip" data-placement="bottom" title="浏览数")
       = article.view_count || 0
     %span.icon.icon-thumbs-up(data-toggle="tooltip" data-placement="bottom" title="称赞数")
