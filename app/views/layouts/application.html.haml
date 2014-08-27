@@ -46,12 +46,20 @@
                     = link_to '登录', login_path, class: 'btn btn-default'
                   %li
                     = link_to '注册', register_path, class: 'btn btn-primary'
-            = form_tag "#", class: 'navbar-form pull-right', role: 'search' do
+            = form_tag articles_path, method: 'get', class: 'navbar-form pull-right', role: 'search', id: 'search_form' do
               .form-group
                 = text_field_tag 'keyword', params[:keyword], class: 'form-control', placeholder: '请输入关键字'
-                = submit_tag '提交', class: 'btn btn-default'
+                %a#search_button
+                  %span.icon.icon-search
       = yield
       -#.alert.alert-warning
       -#  %a.close{"data-dismiss"=>"alert"} &times;
       -#  %span
       -#    fdsafdsafdsfsd
+
+:javascript
+  $(function(){
+    $('#search_button').click(function(){
+      $('#search_form').submit();
+    });
+  });

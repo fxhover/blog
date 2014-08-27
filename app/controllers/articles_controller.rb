@@ -5,7 +5,27 @@ class ArticlesController < ApplicationController
 
   def index
     res = Article
-    @articles = res.order('created_at desc').page(params[:page]).per(2)
+    order = 'updated_at desc'
+    if params[:sort].present?
+      order = case params[:sort]
+                when 'star'
+                  'star_count desc'
+                when 'comments'
+                  'comments_count desc'
+                else
+                  'updated_at desc'
+              end
+    end
+    if params[:c].present?
+      category = Category.find params[:c]
+      res = res.where("category_id=#{category.id}") if category
+    end
+    res = res.where("title like ?", "%#{params[:keyword]}%") if params[:keyword].present?
+    @articles = res.order(order).page(params[:page]).per(2)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new

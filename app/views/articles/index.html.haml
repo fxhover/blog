@@ -2,16 +2,25 @@
   .col-md-9.layout-main
     .tab-nav
     -#  %h2.common-title 博文列表
-    %nav.sub-tab.text-right
-      %span.icon.icon-circle-arrow-down(data-toggle="tooltip" data-placement="bottom" title="排序")
-      = link_to '按时间', '#', class: 'current'
-      = link_to '按称赞', '#', class: ''
-      = link_to '按回复数', '#', class: ''
-    .article-list
-      - @articles.each do |article|
-        = render partial: 'article', locals: {article: article}
-
-    = paginate @articles
+    %nav.sub-tab.row
+      %span.col-md-6.text-left
+        %h3 文章列表
+      %span.col-md-6.text-right.sort_navbar
+        - params_hash = params.dup
+        - params_hash.delete :page
+        %span.icon.icon-circle-arrow-down(data-toggle="tooltip" data-placement="bottom" title="排序")
+        = link_to '按时间', articles_path(params_hash.merge({sort: 'time'})), remote: true, class: "#{'current' if params[:sort].nil? || params[:sort] == 'time'}"
+        = link_to '按称赞', articles_path(params_hash.merge({sort: 'star'})), remote: true, class: "#{'current' if params[:sort].present? && params[:sort] == 'star'}"
+        = link_to '按评论', articles_path(params_hash.merge({sort: 'comments'})), remote: true, class: "#{'current' if params[:sort].present? && params[:sort] == 'comments'}"
+    .article-list#article-list
+      = render partial: 'articles'
 
   .sidebar.col-md-3.layout-secondary.hidden-xs.hidden-sm
     = render partial: 'article_sidebar'
+
+:javascript
+  $(function(){
+    $('.sort_navbar a').click(function(){
+      $(this).addClass('current').siblings().removeClass('current');
+    });
+  });

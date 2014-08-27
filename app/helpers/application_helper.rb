@@ -12,4 +12,8 @@ module ApplicationHelper
     tags = article.tags || ''
     tags.split(',')
   end
+
+  def get_articles_count
+    Article.count
+  end
 end

@@ -1,9 +1,14 @@
 .text-left.ui-sortable
   %h4 文章分类
   %ul.nav.bs-docs-sidenav
+    %li
+      = link_to articles_path, remote: true do
+        全部
+        %span.badge
+          = "#{get_articles_count}篇"
     - get_categories.each do |category|
       %li
-        = link_to articles_path(c: category.id) do
+        = link_to articles_path(c: category.id), remote: true do
           = category.name
           %span.badge
             = "#{category.articles_count || 0}篇"
