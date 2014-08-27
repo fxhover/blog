@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require html5shiv.min.js
+//= require respond.min.js
 //= require_tree .

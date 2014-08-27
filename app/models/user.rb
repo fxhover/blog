@@ -2,13 +2,16 @@
 class User < ActiveRecord::Base
   has_secure_password
 
+  has_many :articles
+  has_many :comments, class_name: 'ArticleComment'
+
   before_save :set_admin
-  validates :username, length: {minimum: 5, maximum: 30}, uniqueness: true
-  validates :email, uniqueness: true, format: {with: /\A[a-zA-Z0-9\-]+@[a-zA-Z0-9-]+\.(org|com|cn|io|net|cc|me)\z/}
+  validates :username, length: {minimum: 5, maximum: 30} #, uniqueness: true
+  validates :email, format: {with: /\A[a-zA-Z0-9\-]+@[a-zA-Z0-9-]+\.(org|com|cn|io|net|cc|me)\z/} #, uniqueness: true
   validates :password, length: {minimum: 6}, confirmation: true
 
   def set_admin
-    self.admin = false unless self.admin.present?
+    self.admin = 0 unless self.admin.present?
   end
 
   def check_password(password)

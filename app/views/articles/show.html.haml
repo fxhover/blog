@@ -37,13 +37,14 @@
       转载：
       = @article.source
 
-  %p
-    = @article.content
+  .panel.panel-dfault
+    .panel-body
+      %p
+        = @article.content
 
   %h3 评论：
   #comments_content
-    %p
-      = render partial: 'comments'
+    = render partial: 'comments'
 
   %p
     = render partial: 'comment_form'

@@ -1,2 +1,4 @@
 - @comments.each do |comment|
   = render partial: 'comment', locals: {comment: comment}
+
+= paginate @comments, remote: true

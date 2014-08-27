@@ -1,3 +1,6 @@
+- unless @articles.present?
+  .jumbotron
+    %h2 什么也没有～
 - @articles.each do |article|
   = render partial: 'article', locals: {article: article}
 

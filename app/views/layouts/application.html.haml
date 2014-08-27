@@ -7,8 +7,6 @@
     %title= Settings.blog.title
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
-    = javascript_include_tag 'http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js'
-    = javascript_include_tag 'http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js'
     = csrf_meta_tags
 
   %body
@@ -22,7 +20,7 @@
               %li{class: "#{'active' if params[:controller] == 'articles' && params[:action] == 'index'}"}
                 = link_to '文章列表', articles_path
               %li
-                = link_to '分类浏览', '#'
+                = link_to '关于博主', '#'
             %ul.nav.navbar-nav.navbar-right
               - if is_logined?
                 %li.dropdown
