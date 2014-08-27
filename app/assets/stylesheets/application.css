@@ -118,4 +118,16 @@ p .icon {
     color: #666666;
 }
 
+a .icon {
+    text-decoration: none;
+}
+
+a.disabled {
+    color: #333333;
+}
+
+a.disabled:hover {
+    color: #333333;
+}
+
 

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :is_logined?, :current_user_is_admin?, :get_categories_options
+  helper_method :current_user, :is_logined?, :current_user_is_admin?, :get_categories_options, :current_user_can_star?
 
   rescue_from Exception, with: :error_500 unless Rails.env.development?
   rescue_from ActiveRecord::RecordNotFound, with: :error_404 unless Rails.env.development?
@@ -22,6 +22,11 @@ class ApplicationController < ActionController::Base
 
   def current_user_is_admin?
     @current_user && @current_user.admin
+  end
+
+  def current_user_can_star?(article)
+    return false unless @current_user
+    !article.article_stars.find_by(user_id: @current_user.id).present?
   end
 
   def get_categories_options

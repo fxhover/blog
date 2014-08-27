@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140826132200) do
+ActiveRecord::Schema.define(version: 20140827095400) do
+
+  create_table "article_stars", force: true do |t|
+    t.integer  "article_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "article_stars", ["article_id", "user_id"], name: "index_article_stars_on_article_id_and_user_id", using: :btree
 
   create_table "articles", force: true do |t|
     t.integer  "user_id"
