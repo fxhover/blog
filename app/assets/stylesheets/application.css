@@ -151,6 +151,9 @@ h3 .icon {
     height: 200px;
 }
 
+.comment_content {
+    margin-left: 20px;
+}
 .panel-body {
     padding: 15px 30px 15px 30px !important;
 }

@@ -1,6 +1,10 @@
 .panel.panel-dfault
   .panel-body
     .row
-      = comment.content
+      .col-md-1.text-center
+        = avatar comment.user
+        = comment.user.username
+      .comment_content.col-md-8
+        = comment.content
     .row
-      = "#{comment.user.username} #{comment.created_at.strftime('%Y-%m-%d %H:%M:%S')}"
+      = "#{comment.created_at.strftime('%Y-%m-%d %H:%M:%S')}"
