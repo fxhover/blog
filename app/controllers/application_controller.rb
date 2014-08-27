@@ -43,6 +43,10 @@ class ApplicationController < ActionController::Base
     session[:user_id].present? && session[:user_id]
   end
 
+  def require_login
+    redirect_to root_path unless is_logined?
+  end
+
   def error_500
     render file: File.join(Rails.root, 'public/500.html'), status: 500, layout: false
   end

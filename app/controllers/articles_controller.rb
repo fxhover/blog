@@ -51,6 +51,7 @@ class ArticlesController < ApplicationController
   def show
     @article.add_view request.remote_ip, @current_user, params.inspect
     @comment = @article.comments.new
+    @comments = @article.comments.order('updated_at asc').page(params[:page]).per(2)
   end
 
   def edit

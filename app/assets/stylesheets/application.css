@@ -62,6 +62,18 @@ ul {
     padding: 5px 20px 5px 20px;
 }
 
+.article_content p {
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+}
+
+.article_des {
+    min-height: 100px;
+    display: block;
+    margin-bottom: 30px;
+}
+
 .sidebar {
     padding-left: 50px !important;
 }
@@ -134,6 +146,14 @@ a.disabled:hover {
 h3 .icon {
     font-size: 18px;
     margin-left: 15px;
+}
+
+#article_comment_content {
+    height: 200px;
+}
+
+.panel-body {
+    padding: 15px 30px 15px 30px !important;
 }
 
 
