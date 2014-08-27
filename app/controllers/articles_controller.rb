@@ -49,7 +49,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-
+    @article.add_view request.remote_ip, @current_user, params.inspect
   end
 
   def star

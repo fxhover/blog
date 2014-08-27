@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827095400) do
+ActiveRecord::Schema.define(version: 20140827125400) do
+
+  create_table "aritle_views", force: true do |t|
+    t.integer  "article_id"
+    t.integer  "user_id"
+    t.string   "ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "article_stars", force: true do |t|
     t.integer  "article_id"
@@ -21,6 +29,17 @@ ActiveRecord::Schema.define(version: 20140827095400) do
   end
 
   add_index "article_stars", ["article_id", "user_id"], name: "index_article_stars_on_article_id_and_user_id", using: :btree
+
+  create_table "article_views", force: true do |t|
+    t.integer  "article_id"
+    t.integer  "user_id"
+    t.string   "ip"
+    t.text     "param_string"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "article_views", ["article_id", "ip", "created_at"], name: "index_article_views_on_article_id_and_ip_and_created_at", using: :btree
 
   create_table "articles", force: true do |t|
     t.integer  "user_id"

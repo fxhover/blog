@@ -11,7 +11,7 @@
     %span.icon.icon-time(data-toggle="tooltip" data-placement="bottom" title="发表时间")
       = @article.updated_at.strftime('%Y-%m-%d %H:%M')
     %span.icon.icon-eye-open(data-toggle="tooltip" data-placement="bottom" title="浏览")
-      = @article.view_count || 0
+      = @article.view_count || 1
     - if current_user_can_star?(@article)
       = link_to star_article_path(@article), method: :post, remote: 'true' do
         %span.icon.icon-thumbs-up#article_star(data-toggle="tooltip" data-placement="bottom" title="称赞")

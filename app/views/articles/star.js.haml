@@ -1,4 +1,4 @@
 - if @result[:status]
   :plain
-    $('#article_star').html("#{@result[:star_count]}");
+    $('#article_star').html(" #{@result[:star_count]}");
     $('#article_star').parent('a').attr('href', 'javascript:void(0);').addClass('disabled');
