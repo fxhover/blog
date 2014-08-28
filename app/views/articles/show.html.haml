@@ -46,11 +46,25 @@
   #comments_content
     = render partial: 'comments'
 
+  -#.madal.fade#edit_comment_modal{tabindex: -1, role: 'dialog', "aria-labelledby"=>"myModalLabel", "aria-hidden"=> "true"}
+  -#  .modal-dialog
+  -#    .modal-content
+  -#      .modal-header
+  -#        %button.close{type: "button", "data-dismiss"=>"modal"}
+  -#          %span{"aria-hidden"=>"true"} &times;
+  -#          %span.sr-only Close
+  -#        %h4.modeal-title#myModalLabel 编辑评论
+  -#      .modal-body#edit_comment_body
+  -#      .modal-footer
+  -#        %button.btn.btn-default{type: 'button', 'data-dismiss'=>'modal'} 关闭
+  -#        = submit_tag '提交', class: 'btn btn-primary'
+
   - if is_logined?
-    %p
+    #comment_form
       = render partial: 'comment_form'
   - else
     .jumbotron
       %h2
         = link_to '登录', login_path
         后可评论
+

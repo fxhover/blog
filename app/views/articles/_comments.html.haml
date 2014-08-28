@@ -3,5 +3,5 @@
     %h2 还没有评论～
 - @comments.each do |comment|
   = render partial: 'comment', locals: {comment: comment}
-
-= paginate @comments, remote: true
+#paginate
+  = paginate @comments, remote: true

@@ -1,0 +1,4 @@
+- if @result[:status]
+  :plain
+    $("#comment_#{@comment.id}_body").html("#{@comment.content}");
+    location.hash = "#comment_#{@comment.id}";
