@@ -78,6 +78,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    markdown-toolbar (0.2.4)
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
@@ -105,6 +106,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (3.1.2)
     ref (1.0.5)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -164,8 +166,10 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  markdown-toolbar
   mysql2
   rails (= 4.1.5)
+  redcarpet
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   settingslogic

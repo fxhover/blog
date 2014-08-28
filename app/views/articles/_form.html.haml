@@ -15,7 +15,6 @@
     = f.text_field :source, placeholder: '文章来源，为空则为原创', class: 'form-control'
   .form-group
     %label{for: 'article_content'} 文章内容
-    = f.text_area :content, placeholder: '文章内容', class: 'form-control'
+    = f.text_area :content, placeholder: '文章内容', class: 'form-control markdown-toolbar'
   .form-group
     = f.submit '提交', class: 'btn btn-success btn-lg btn-block'
-

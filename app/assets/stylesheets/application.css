@@ -15,6 +15,7 @@
  *= require bootstrap
  *= require _font-awesome
  *= require _font-awesome-ie7.min
+ *= require markdown-toolbar
  */
 
 .nav li a {
@@ -169,6 +170,19 @@ h3 .icon {
 
 .panel-body {
     padding: 15px 30px 15px 30px !important;
+}
+
+.markdown-toolbar-panel {
+    padding-left: 5px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 30px !important;
+    line-height: 30px !important;
+}
+
+.markdown-toolbar-panel .mdt_buttons div {
+    margin-right: 7px !important;
+    margin-top: 5px !important;
 }
 
 

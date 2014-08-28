@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user, :is_logined?, :current_user_is_admin?, :get_categories_options, :current_user_can_star?,
-                :current_user_can_edit_comment?
+                :current_user_can_edit_comment?, :markdown_parser
 
   rescue_from Exception, with: :error_500 unless Rails.env.development?
   rescue_from ActiveRecord::RecordNotFound, with: :error_404 unless Rails.env.development?
@@ -39,6 +39,11 @@ class ApplicationController < ActionController::Base
     options = []
     Category.order('articles_count desc').each {|c| options << [c.name, c.id]}
     options
+  end
+
+  def markdown_parser(content)
+    markdown = Redcarpet::Markdown.new Redcarpet::Render::HTML, autolink: true, tables: true
+    markdown.render content
   end
 
   def referer

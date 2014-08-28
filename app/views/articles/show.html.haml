@@ -40,7 +40,7 @@
   .panel.panel-dfault
     .panel-body
       %p
-        = @article.content
+        = raw markdown_parser(@article.content)
 
   %h3 评论：
   #comments_content

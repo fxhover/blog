@@ -17,6 +17,7 @@
 //= require twitter/bootstrap/rails/confirm
 //= require html5shiv.min.js
 //= require respond.min.js
+//= require markdown-toolbar
 //= require_tree .
 
 $.fn.twitter_bootstrap_confirmbox.defaults = {

@@ -48,6 +48,10 @@ end
 #Avatar
 gem 'gravatar_image_tag'
 
+#markdown
+gem 'markdown-toolbar'
+gem 'redcarpet'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
