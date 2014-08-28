@@ -14,6 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require twitter/bootstrap/rails/confirm
 //= require html5shiv.min.js
 //= require respond.min.js
 //= require_tree .
+
+$.fn.twitter_bootstrap_confirmbox.defaults = {
+    title: '提示',
+    cancel: '取消',
+    cancel_class: 'btn cancel',
+    proceed: '确定',
+    proceed_class: 'btn proceed btn-primary'
+}

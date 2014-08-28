@@ -1,10 +1,17 @@
-.panel.panel-dfault
+.panel.panel-dfault{id: "comment_#{comment.id}"}
   .panel-body
     .row
       .col-md-1.text-center
         = avatar comment.user
         = comment.user.username
-      .comment_content.col-md-8
+      .comment_content.col-md-9
         = comment.content
-    .row
-      = "#{comment.created_at.strftime('%Y-%m-%d %H:%M:%S')}"
+    .row.comment_footer.text-right
+      %span.icon.icon-time(data-toggle="tooltip" data-placement="bottom" title="评论时间")
+        = "#{comment.updated_at.strftime('%Y-%m-%d %H:%M:%S')}"
+      - if current_user_can_edit_comment?(comment)
+        = link_to '#' do
+          %span.icon.icon-edit
+      - if current_user_is_admin? || current_user_can_edit_comment?(comment)
+        = link_to article_comment_path(@article, comment), method: 'delete', remote: true, "data-confirm"=> '确定删除吗？' do
+          %span.icon.icon-trash

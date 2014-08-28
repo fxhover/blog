@@ -154,6 +154,19 @@ h3 .icon {
 .comment_content {
     margin-left: 20px;
 }
+
+.comment_footer {
+    padding-right: 40px;
+}
+
+.comment_footer a {
+    font-size: 18px;
+}
+
+.comment_footer a {
+    margin-left: 8px;
+}
+
 .panel-body {
     padding: 15px 30px 15px 30px !important;
 }
