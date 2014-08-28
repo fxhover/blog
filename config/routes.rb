@@ -54,8 +54,13 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :blogs, only:[:index]
   root "blogs#index"
+
+  resources :blogs, only:[:index] do
+    collection do
+      post 'upload_img'
+    end
+  end
 
   resources :articles do
     member do

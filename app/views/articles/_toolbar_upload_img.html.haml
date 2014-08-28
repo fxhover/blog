@@ -1,0 +1,32 @@
+= form_for :upload, url: upload_img_blogs_path, enctype: "multipart/form-data", class: 'form-horizontal', role: 'form', remote: true do |f|
+  .modal.fade#upload_modal
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"data-dismiss"=>"modal"}
+            %span{"aria-hidden"=>"true"}
+              &times;
+            %span.sr-only
+              Close
+          %h4 上传图片
+        .modal-body
+          .form-group.row.text-center
+            .error.text-center#error
+            %label.col-sm-2.control-label.text-right{for: "upload_img"} 图片：
+            .col-sm-8.text-left
+              = token_tag
+              = f.hidden_field :text_id, value: text_id
+              = f.file_field :img
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss"=>"modal"} 关闭
+          = submit_tag '上传', class: 'btn btn-primary'
+
+
+:javascript
+  $(function(){
+    new MarkdownToolbar($('##{text_id}'));
+    $('.mdt_button_image').unbind('click');
+    $('.mdt_button_image').click(function(){
+      $('#upload_modal').modal('show');
+    });
+  });

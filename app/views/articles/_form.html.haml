@@ -1,3 +1,5 @@
+= render partial: 'toolbar_upload_img', locals: {text_id: 'article_content'}
+
 = form_for @article, role: 'form' do |f|
   .form-group
     %label{for: 'article_title'} 文章标题
@@ -15,6 +17,6 @@
     = f.text_field :source, placeholder: '文章来源，为空则为原创', class: 'form-control'
   .form-group
     %label{for: 'article_content'} 文章内容
-    = f.text_area :content, placeholder: '文章内容', class: 'form-control markdown-toolbar'
+    = f.text_area :content, placeholder: '文章内容', class: 'form-control'
   .form-group
     = f.submit '提交', class: 'btn btn-success btn-lg btn-block'

@@ -51,6 +51,8 @@ gem 'gravatar_image_tag'
 #markdown
 gem 'markdown-toolbar'
 gem 'redcarpet'
+gem 'simple_fileupload'
+gem 'remotipart'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

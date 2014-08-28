@@ -1,0 +1,8 @@
+- if @result[:status]
+  :plain
+    var old_val = $("##{@result[:text_id]}").val();
+    $("##{@result[:text_id]}").val(old_val + "#{@result[:message]}");
+    $('#upload_modal').modal('hide');
+- else
+  :plain
+    $('#error').text("#{@result[:message]}");

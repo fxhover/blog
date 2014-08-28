@@ -16,3 +16,4 @@
 /tmp
 /config/*.yml
 /.idea/*
+/public/images/*

@@ -156,6 +156,10 @@ h3 .icon {
     margin-left: 20px;
 }
 
+.comment_content img{
+    max-width: 100%;
+}
+
 .comment_footer {
     padding-right: 40px;
 }
@@ -183,6 +187,10 @@ h3 .icon {
 .markdown-toolbar-panel .mdt_buttons div {
     margin-right: 7px !important;
     margin-top: 5px !important;
+}
+
+.error {
+    color: red;
 }
 
 
