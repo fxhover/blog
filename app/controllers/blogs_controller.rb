@@ -1,6 +1,6 @@
 #encoding: utf-8
 class BlogsController < ApplicationController
-  before_filter :require_login, only: [:set, :upload_img]
+  before_filter :require_login, only: [:set, :set_userinfo, :upload_img]
 
   def index
 
@@ -13,18 +13,26 @@ class BlogsController < ApplicationController
   def set_userinfo
     user = User.find @current_user.id
     user.nick_name = params[:user][:nick_name] if params[:user][:nick_name].present?
-    #begin
+    begin
       if params[:user][:avatar].present?
         upload_info = upload_picture params[:user][:avatar]
         user.avatar = "/images/#{upload_info[:real_file_name]}"
       end
-    #end
-    if user.save
-      redirect_to set_blogs_path
-    else
-      flash.now[:error] = '修改用户信息失败'
+    rescue UploadException => e
+      flash.now[:error] = e.message
       render 'set'
+    else
+      if user.save
+        redirect_to set_blogs_path
+      else
+        flash.now[:error] = user.errors.full_messages.first
+        render 'set'
+      end
     end
+  end
+
+  def set_blog
+
   end
 
   def upload_img

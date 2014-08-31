@@ -5,7 +5,7 @@
     = form_for :user, url: set_userinfo_blogs_path, role: 'form' do |f|
       .form-group
         %label{for: 'user_nick_name'} 昵称
-        = f.text_field :nick_name, value: @current_user.nick_name, placeholder: '昵称', class: 'form-control', size: 10
+        = f.text_field :nick_name, value: @current_user.nickname, placeholder: '昵称', class: 'form-control', size: 10
       .form-group
         %label{for: 'user_avatar'} 头像
         .row.text-left

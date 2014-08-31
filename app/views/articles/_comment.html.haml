@@ -3,7 +3,7 @@
     .row
       .col-md-1.text-center
         = avatar comment.user
-        = comment.user.username
+        = comment.user.nickname
       .comment_content.col-md-9{id: "comment_#{comment.id}_body"}
         = raw markdown_parser(comment.content)
     .row.comment_footer.text-right

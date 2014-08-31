@@ -61,6 +61,7 @@ Rails.application.routes.draw do
       post 'upload_img'
       get 'set'
       post 'set_userinfo'
+      get 'set_blog'
     end
 
   end

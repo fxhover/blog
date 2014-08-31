@@ -7,7 +7,8 @@
   %ul.nav.nav-pills.nav-stacked{role: 'tablist'}
     %li.active{role: 'presentation'}
       = link_to '个人信息设置', set_blogs_path
-    %li{role: 'presentation'}
-      = link_to '博客设置', '#'
+    - if current_user_is_admin?
+      %li{role: 'presentation'}
+        = link_to '博客设置', set_blog_blogs_path
     %li{role: 'presentation'}
       = link_to '修改密码', '#'
