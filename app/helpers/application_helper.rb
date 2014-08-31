@@ -1,7 +1,11 @@
 #encoding: utf-8
 module ApplicationHelper
   def avatar(user)
-    gravatar_image_tag user.email, alt: user.username #, gravatar: {default: '/gavatar.jpg'}
+    user.avatar.present? ? image_tag(user.avatar) : (gravatar_image_tag user.email, alt: user.username)
+  end
+
+  def avatar_url(user)
+    user.avatar.present? ? user.avatar : (gravatar_image_url user.email, alt: user.username)
   end
 
   def get_categories

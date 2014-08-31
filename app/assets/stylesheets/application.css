@@ -193,4 +193,22 @@ h3 .icon {
     color: red;
 }
 
+.set_title {
+    margin-left: 20px;
+}
+
+#set_user_avatar {
+    margin-bottom: 10px;
+    max-width: 100px;
+}
+
+.avatar-field {
+    margin-top: 30px;
+}
+
+.set-btn {
+    padding: 10px 40px !important;
+}
+
+
 

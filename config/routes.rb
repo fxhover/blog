@@ -59,7 +59,10 @@ Rails.application.routes.draw do
   resources :blogs, only:[:index] do
     collection do
       post 'upload_img'
+      get 'set'
+      post 'set_userinfo'
     end
+
   end
 
   resources :articles do

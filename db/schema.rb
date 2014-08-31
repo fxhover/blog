@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827134600) do
+ActiveRecord::Schema.define(version: 20140831174700) do
 
   create_table "aritle_views", force: true do |t|
     t.integer  "article_id"
@@ -91,9 +91,12 @@ ActiveRecord::Schema.define(version: 20140827134600) do
     t.datetime "last_reply_time"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nick_name"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["nick_name"], name: "index_users_on_nick_name", using: :btree
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
 end

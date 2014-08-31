@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
   has_many :comments, class_name: 'ArticleComment'
 
   before_save :set_admin
-  validates :username, length: {minimum: 5, maximum: 30} #, uniqueness: true
-  validates :email, format: {with: /\A[a-zA-Z0-9\-]+@[a-zA-Z0-9-]+\.(org|com|cn|io|net|cc|me)\z/} #, uniqueness: true
-  validates :password, length: {minimum: 6}, confirmation: true
+  validates :username, length: {minimum: 5, maximum: 30}, uniqueness: true
+  validates :email, format: {with: /\A[a-zA-Z0-9\-]+@[a-zA-Z0-9-]+\.(org|com|cn|io|net|cc|me)\z/}, uniqueness: true
+  validates :password, length: {minimum: 6}, confirmation: true, if: :need_valid_password?
 
   def set_admin
     self.admin = 0 unless self.admin.present?
@@ -24,5 +24,9 @@ class User < ActiveRecord::Base
 
   def can_reply?
     (DateTime.now.to_i - self.last_reply_time.to_i) > 60
+  end
+
+  def need_valid_password?
+    new_record? || password.present?
   end
 end

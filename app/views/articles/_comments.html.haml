@@ -1,5 +1,5 @@
 - unless @comments.present?
-  .jumbotron
+  .jumbotron#no_comments
     %h2 还没有评论～
 - @comments.each do |comment|
   = render partial: 'comment', locals: {comment: comment}

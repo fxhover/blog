@@ -33,6 +33,8 @@
                     %li
                       = link_to '#' do
                         = gravatar_image_tag @current_user.email, size: 100, alt: @current_user.username, gravatar: {default: 'http://www.gravatar.com/avatar/0c821f675f132d790b3f25e79da739a7'}
+                    %li
+                      = link_to '设置', set_blogs_path
                     - if current_user_is_admin?
                       %li
                         = link_to '写博客', new_article_path

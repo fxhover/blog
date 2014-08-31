@@ -1,3 +1,4 @@
 - if @result[:status]
   $("#article_comment_content").val('');
+  $('#no_comments').remove();
   $("#paginate").prepend("#{escape_javascript(render partial: 'articles/comment', locals: {comment: @comment})}");

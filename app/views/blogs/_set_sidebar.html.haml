@@ -1,0 +1,13 @@
+- if flash[:error].present?
+  .alert.alert-danger
+    %a.close{"data-dismiss"=>"alert"} &times;
+    %span
+      = flash[:error]
+.col-md-2
+  %ul.nav.nav-pills.nav-stacked{role: 'tablist'}
+    %li.active{role: 'presentation'}
+      = link_to '个人信息设置', set_blogs_path
+    %li{role: 'presentation'}
+      = link_to '博客设置', '#'
+    %li{role: 'presentation'}
+      = link_to '修改密码', '#'
