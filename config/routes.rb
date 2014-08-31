@@ -62,6 +62,7 @@ Rails.application.routes.draw do
       get 'set'
       post 'set_userinfo'
       get 'set_blog'
+      post 'update_blog'
     end
 
   end

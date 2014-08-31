@@ -1,3 +1,8 @@
+- if defined?(obj) && obj.present? && obj.errors.any?
+  .alert.alert-danger
+  %a.close{"data-dismiss"=>"alert"} &times;
+  %span
+    = obj.errors.full_messages.first
 - if flash[:error].present?
   .alert.alert-danger
     %a.close{"data-dismiss"=>"alert"} &times;
@@ -5,10 +10,10 @@
       = flash[:error]
 .col-md-2
   %ul.nav.nav-pills.nav-stacked{role: 'tablist'}
-    %li.active{role: 'presentation'}
+    %li{role: 'presentation', class: "#{'active' if params[:action] == 'set'}"}
       = link_to '个人信息设置', set_blogs_path
     - if current_user_is_admin?
-      %li{role: 'presentation'}
+      %li{role: 'presentation', class: "#{'active' if params[:action] == 'set_blog'}"}
         = link_to '博客设置', set_blog_blogs_path
     %li{role: 'presentation'}
       = link_to '修改密码', '#'

@@ -32,7 +32,24 @@ class BlogsController < ApplicationController
   end
 
   def set_blog
+    @blog = BlogInfo.first
+    @blog = BlogInfo.new unless @blog
+  end
 
+  def update_blog
+    param_hash = params.require(:blog).permit(:name, :blog_title, :email, :description)
+    @blog = BlogInfo.first
+    if @blog.present?
+      result = @blog.update_attributes param_hash
+    else
+      @blog = BlogInfo.new param_hash
+      result = @blog.save
+    end
+    if result
+      redirect_to set_blogs_path
+    else
+      render 'set_blog'
+    end
   end
 
   def upload_img

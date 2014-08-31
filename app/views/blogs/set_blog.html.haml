@@ -1,0 +1,19 @@
+.row
+  %h3.set_title 设置
+  = render 'set_sidebar', obj: @blog
+  .col-md-8
+    = form_for @blog, as: 'blog', url: update_blog_blogs_path, method: 'post', role: 'form' do |f|
+      .form-group
+        %label{for: 'blog_name'} 博主
+        = f.text_field :name, placeholder: '博主名称', class: 'form-control'
+      .form-group
+        %label{for: 'blog_blog_title'} 博客名字
+        = f.text_field :blog_title, placeholder: '博客名称', class: 'form-control'
+      .form-group
+        %label{for: 'blog_email'} 联系邮箱
+        = f.text_field :email, placeholder: '联系邮箱', class: 'form-control'
+      .form-group
+        %label{for: 'blog_description'} 关于博主
+        = f.text_area :description, placeholder: '关于博主', class: 'form-control blog-description'
+      .form-group
+        = f.submit '修改', class: 'btn btn-primary set-btn'
