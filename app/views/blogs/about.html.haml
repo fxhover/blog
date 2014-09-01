@@ -1,0 +1,10 @@
+.text-left
+  %p
+    %h2 博主
+    = @blog.name
+  %p
+    %h2 email
+    = link_to @blog.email, "mailto:#{@blog.email}"
+  %p
+    %h2 简介
+    = @blog.description

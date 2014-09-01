@@ -52,6 +52,10 @@ class BlogsController < ApplicationController
     end
   end
 
+  def about
+    @blog = BlogInfo.first
+  end
+
   def upload_img
     @result = {status: false, message: '', text_id: params[:upload][:text_id] || ''}
     begin

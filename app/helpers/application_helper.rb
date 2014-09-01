@@ -20,4 +20,9 @@ module ApplicationHelper
   def get_articles_count
     Article.count
   end
+
+  def blog_title
+    blog = BlogInfo.first
+    blog.present? ? blog.blog_title : 'Blog'
+  end
 end
