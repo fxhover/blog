@@ -214,5 +214,10 @@ h3 .icon {
     height: 200px !important;
 }
 
+.footer {
+    height: 80px;
+    line-height: 80px;
+}
+
 
 

@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
       res = res.where("category_id=#{category.id}") if category
     end
     res = res.where("title like ?", "%#{params[:keyword]}%") if params[:keyword].present?
-    @articles = res.order(order).page(params[:page]).per(2)
+    @articles = res.order(order).page(params[:page]).per(Settings.blog.aritcle_page_size)
     respond_to do |format|
       format.html
       format.js
@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
   def show
     @article.add_view request.remote_ip, @current_user, params.inspect
     @comment = @article.comments.new
-    @comments = @article.comments.order('updated_at asc').page(params[:page]).per(2)
+    @comments = @article.comments.order('updated_at asc').page(params[:page]).per(Settings.blog.comments_page_size)
     respond_to do |format|
       format.html
       format.js

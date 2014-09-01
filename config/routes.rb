@@ -64,6 +64,8 @@ Rails.application.routes.draw do
       get 'set_blog'
       post 'update_blog'
       get 'about'
+      get 'change_password'
+      post 'update_password'
     end
 
   end

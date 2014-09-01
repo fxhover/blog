@@ -9,6 +9,11 @@
         %a.close{"data-dismiss"=>"alert"} &times;
         %span
           = errors.first
+    - if flash[:success].present?
+      .alert.alert-success
+        %a.close{"data-dismiss"=>"success"} &times;
+        %span
+          = flash[:success]
     - elsif flash[:error].present?
       .alert.alert-danger
         %a.close{"data-dismiss"=>"alert"} &times;

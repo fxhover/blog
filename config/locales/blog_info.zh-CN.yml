@@ -1,0 +1,10 @@
+#encoding: utf-8
+zh-CN:
+  activerecord:
+    models:
+      blog_info: '博客'
+    attributes:
+      blog_info:
+        blog_title: '博客名称'
+        name: '博主名称'
+        description: '关于'
