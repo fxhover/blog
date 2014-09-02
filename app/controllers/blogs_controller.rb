@@ -3,7 +3,8 @@ class BlogsController < ApplicationController
   before_filter :require_login, only: [:set, :set_userinfo, :upload_img, :set_blog, :update_blog, :change_password, :update_password]
 
   def index
-
+    @articles = Article.order('updated_at desc').limit(10)
+    @new_comments = ArticleComment.order('updated_at desc').limit(10)
   end
 
   def set

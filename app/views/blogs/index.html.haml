@@ -1,0 +1,11 @@
+.row.inner.edge
+  .col-md-9.layout-main
+    .article-list#article-list
+      = render partial: 'articles/articles'
+  .col-md-3
+    %h3 最新评论
+    - if @new_comments.present?
+      %ul.list-group.new_comments
+        - @new_comments.each do |comment|
+          %li.text-left
+            = link_to "#{comment.user.nickname}: #{comment.content[0..18]}...", article_path(comment.article_id) + "#comment_#{comment.id}", target: '_blank', class: 'list-group-item'

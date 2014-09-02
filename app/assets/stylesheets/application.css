@@ -219,5 +219,13 @@ h3 .icon {
     line-height: 80px;
 }
 
+.comment_avatar img {
+    max-width: 80px;
+}
+
+.new_comments li {
+    margin-top: 10px;
+}
+
 
 

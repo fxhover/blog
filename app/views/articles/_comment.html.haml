@@ -2,7 +2,8 @@
   .panel-body
     .row
       .col-md-1.text-center
-        = avatar comment.user
+        %span.comment_avatar
+          = avatar comment.user
         = comment.user.nickname
       .comment_content.col-md-9{id: "comment_#{comment.id}_body"}
         = raw markdown_parser(comment.content)
