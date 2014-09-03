@@ -85,7 +85,6 @@
 ###重启nginx###
     
     sudo service nginx restart
-
 ###绑定hosts###    
    
     127.0.0.1  blog.com 
