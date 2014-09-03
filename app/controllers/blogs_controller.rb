@@ -94,6 +94,15 @@ class BlogsController < ApplicationController
     end
   end
 
+  def preview
+    result = {status: false, message: ''}
+    if params[:content]
+      result[:status] = true
+      result[:message] = markdown_parser params[:content]
+    end
+    render json: result.to_json
+  end
+
   protected
 
   def upload_picture(file)

@@ -16,7 +16,24 @@
     %label{for: 'article_source'} 文章来源
     = f.text_field :source, placeholder: '文章来源，为空则为原创', class: 'form-control'
   .form-group
-    %label{for: 'article_content'} 文章内容
-    = f.text_area :content, placeholder: '文章内容', class: 'form-control'
+    %ul.nav.nav-tabs#preview_tab{role: "tablist"}
+      %li.active
+        = link_to '文章内容', '#edit', role: 'tab', 'data-toggle'=>'tab'
+      %li
+        = link_to '预览', '#preview', role: 'tab', 'data-toggle'=>'tab'
+    .tab-content
+      .tab-pane.active#edit
+        = f.text_area :content, placeholder: '文章内容', class: 'form-control'
+      .tab-pane#preview
   .form-group
     = f.submit '提交', class: 'btn btn-success btn-lg btn-block'
+
+:javascript
+  $(function(){
+    $('#preview_tab a[href="#preview"]').click(function(e){
+      e.preventDefault();
+      $(this).tab('show');
+      preview('article_content', 'preview');
+    });
+  });
+

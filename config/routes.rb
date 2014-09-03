@@ -66,6 +66,7 @@ Rails.application.routes.draw do
       get 'about'
       get 'change_password'
       post 'update_password'
+      post 'preview'
     end
 
   end

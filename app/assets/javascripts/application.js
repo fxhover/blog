@@ -28,3 +28,13 @@ $.fn.twitter_bootstrap_confirmbox.defaults = {
     proceed: '确定',
     proceed_class: 'btn proceed btn-primary'
 }
+
+//markdown preview
+function preview(text_area_id, content_id){
+    content = $('#' + text_area_id).val();
+    $.post('/blogs/preview', {content: content}, function(data){
+       if (data.status){
+           $('#' + content_id).html(data.message);
+       }
+    });
+}
