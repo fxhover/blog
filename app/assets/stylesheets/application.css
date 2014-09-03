@@ -17,7 +17,9 @@
  *= require _font-awesome-ie7.min
  *= require markdown-toolbar
  */
-
+.body_content {
+    margin-top: 60px;
+}
 .nav li a {
     display: block;
     position: relative;

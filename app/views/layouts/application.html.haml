@@ -11,8 +11,8 @@
 
   %body
     .container.wrap_body
-      %nav.navbar.navbar-default{role:'navigation'}
-        .container-fluid
+      %nav.navbar.navbar-default.navbar-fixed-top{role:'navigation'}
+        .container.container-fluid
           .navbar-header
             = link_to blog_title, root_path, class: 'navbar-brand'
           .collspse.navbar-collapse.site-header
@@ -51,6 +51,7 @@
                 = text_field_tag 'keyword', params[:keyword], class: 'form-control', placeholder: '请输入关键字'
                 %a#search_button
                   %span.icon.icon-search
+    .container.body_content
       = yield
       = render partial: 'layouts/footer'
 :javascript
