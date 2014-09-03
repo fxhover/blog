@@ -1,5 +1,5 @@
 #Blog部署文档#
-##环境##
+##环境
     git、ruby 2.1.2、rails 4.1.5、nginx 1.2+、mysql 5.0+
 
 ##下载代码##
@@ -30,7 +30,7 @@
 
     RAILS_ENV=production bundle exec rake db:seed 创建默认分类和管理员账号，编辑 db/seeds.rb可以修改默认分类和管理员账号密码，然后再执行
 
-##预编译前段资源##
+##预编译前端资源##
 
     RAILS_ENV=production bundle exec rake assets:clean
     
@@ -85,7 +85,7 @@
 ###重启nginx###
     
     sudo service nginx restart
-###绑定hosts###    
+###绑定hosts
    
     127.0.0.1  blog.com 
 
