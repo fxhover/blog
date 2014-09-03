@@ -49,7 +49,7 @@ end
 gem 'gravatar_image_tag'
 
 #markdown
-gem 'markdown-toolbar'
+gem 'markdown-toolbar', git: 'git@github.com:fxhover/markdown-toolbar.git'
 gem 'redcarpet'
 gem 'simple_fileupload'
 gem 'remotipart'
