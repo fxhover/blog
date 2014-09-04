@@ -1,4 +1,29 @@
+#Blog演示页面
+
+##首页
+
+![首页](https://github.com/fxhover/blog/raw/master/doc/index.png)
+
+##博文列表
+
+![文章列表](https://github.com/fxhover/blog/raw/master/doc/articles_list.png)
+
+##写博客页面
+
+![写博客](https://github.com/fxhover/blog/raw/master/doc/new_article.png)
+
+##文章详情页面
+
+![文章详情](https://github.com/fxhover/blog/raw/master/doc/show_article.png)
+
+##设置页面
+
+![设置头像](https://github.com/fxhover/blog/raw/master/doc/set1.png)
+
+![设置博客](https://github.com/fxhover/blog/raw/master/doc/set2.png)
+
 #Blog部署文档#
+
 ##环境
     git、ruby 2.1.2、rails 4.1.5、nginx 1.2+、mysql 5.0+
 
