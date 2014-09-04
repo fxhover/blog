@@ -15,5 +15,7 @@
 /log/*.log
 /tmp
 /config/*.yml
+/config/unicorn.rb
+/public/assets/*
 /.idea/*
 /public/images/*
