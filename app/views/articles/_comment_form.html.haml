@@ -2,6 +2,7 @@
 .comment_form
   - url = @comment.new_record? ? article_comments_path(@article) : article_comment_path(@article, @comment)
   = form_for @comment, url: url, role: 'form', remote: true do |f|
+    .error#error_message
     .form-group
       %ul.nav.nav-tabs#preview_tab{role: "tablist"}
         %li.active

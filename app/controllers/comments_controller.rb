@@ -5,13 +5,13 @@ class CommentsController < ApplicationController
   before_filter :get_comment, only: [:edit, :update, :destroy]
 
   def create
-    @result = {status: true, message: ''}
+    @result = {status: false, message: ''}
     @comment = @article.comments.new content: params[:article_comment][:content]
     @comment.user_id = @current_user.id
     if @comment.save
       @result[:status] = true
     else
-      @result[:message] = '发表评论失败'
+      @result[:message] = @comment.errors.full_messages.first
     end
     respond_to do |format|
       format.js

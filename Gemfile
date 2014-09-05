@@ -51,6 +51,8 @@ gem 'gravatar_image_tag'
 #markdown
 gem 'markdown-toolbar', git: 'git@github.com:fxhover/markdown-toolbar.git'
 gem 'redcarpet'
+
+#file upload
 gem 'simple_fileupload'
 gem 'remotipart'
 
