@@ -89,8 +89,10 @@ Rails.application.routes.draw do
       get 'login'
       post 'login_confirm'
       get 'logout'
-      post 'send_active_mail'
+      get 'send_active_mail'
       get 'activation'
+      get 'forget_password'
+      post 'forget_password_confirm'
     end
   end
 

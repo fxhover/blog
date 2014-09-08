@@ -1,7 +1,7 @@
 %section.content
   .form-unit
     = link_to root_path, class: 'brand' do
-      %h1 Blog
+      %h1= blog_title
     %h3 注册账号
     - errors = @user.errors.full_messages
     - if errors.any?

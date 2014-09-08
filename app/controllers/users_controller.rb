@@ -8,8 +8,9 @@ class UsersController < ApplicationController
   def register_confirm
     @user = User.new params.require(:user).permit(:username,:email,:password,:password_confirmation)
     if @user.save
-      to_login @user
-      redirect_to root_path
+      #to_login @user
+      session[:wait_active_email] = @user.email
+      redirect_to send_active_mail_users_path
     else
       render 'register', layout: 'register'
     end
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.find_by username: params[:user][:username]
     unless @user.activation?
       session[:wait_active_email] = @user.email
-      flash.now[:error] = "用户还没有激活，<a href='#{send_active_mail_users_path}' data-method='post'>点此</a>发送激活邮件。"
+      flash.now[:error] = "用户还没有激活，<a href='#{send_active_mail_users_path}'>点此</a>发送激活邮件。"
       return render 'login', layout: 'register'
     end
     if @user && @user.check_password(params[:user][:password])
@@ -71,7 +72,8 @@ class UsersController < ApplicationController
     if active && !active.used?
       user = User.find active.user_id
       user.activation = 1
-      if user.save
+      active.used = 1
+      if user.save && active.save
         flash[:success] = '激活成功，请登录'
         redirect_to login_path
       else
@@ -82,6 +84,14 @@ class UsersController < ApplicationController
       flash[:error] = 'token不存在'
       redirect_to root_path
     end
+  end
+
+  def forget_password
+    render 'forget_password', layout: 'register'
+  end
+
+  def forget_password_confirm
+
   end
 
   protected

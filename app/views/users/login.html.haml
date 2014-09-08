@@ -1,7 +1,7 @@
 %section.content
   .form-unit
     = link_to root_path, class: 'brand' do
-      %h1 Blog
+      %h1= blog_title
     %h3 用户登录
     - errors = @user ? @user.errors.full_messages : []
     - if errors.any?
@@ -26,3 +26,4 @@
       = submit_tag '登录', class: 'btn btn-primary btn-lg'
       .action-wrapper
         = link_to '没有账号？', register_path
+        = link_to '忘记密码？', forget_password_users_path
