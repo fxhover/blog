@@ -19,7 +19,7 @@
             %ul.nav.navbar-nav
               %li{class: "#{'active' if params[:controller] == 'articles' && params[:action] == 'index'}"}
                 = link_to '文章列表', articles_path
-              %li
+              %li{class: "#{'active' if params[:controller] == 'blogs' && params[:action] == 'about'}"}
                 = link_to '关于博主', about_blogs_path
             %ul.nav.navbar-nav.navbar-right
               - if is_logined?
