@@ -1,8 +1,14 @@
 #encoding: utf-8
 defaults: &defaults
   blog:
+    domain: http://localhost:3000
     aritcle_page_size: 10
     comments_page_size: 10
+  mailer:
+    address: smtp.163.com
+    port: 25
+    user_name: email_name@163.com
+    password: email_password
 
 development:
   <<: *defaults
