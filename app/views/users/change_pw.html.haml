@@ -1,0 +1,21 @@
+%section.content
+  .form-unit
+    = link_to root_path, class: 'brand' do
+      %h1= blog_title
+    %h3 重置密码
+    - if flash[:success].present?
+      .alert.alert-success
+        %a.close{"data-dismiss"=>"success"} &times;
+        %span
+          = flash[:success]
+    - elsif flash[:error].present?
+      .alert.alert-danger
+        %a.close{"data-dismiss"=>"alert"} &times;
+        %span= raw flash[:error]
+    = form_for :user, url: change_pw_confirm_users_path, role: 'form' do |f|
+      .form-field.form-group
+        = f.hidden_field :token, value: @token
+        = f.password_field :password, placeholder: '密码', class: 'form-control', required: true
+      .form-field.form-group
+        = f.password_field :password_confirmation, placeholder: '确认密码', class: 'form-control password', required: true
+      = submit_tag '重置', class: 'btn btn-primary btn-lg'

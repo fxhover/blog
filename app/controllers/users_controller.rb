@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   end
 
   def send_active_mail
-    @result = {status: true, message: ''}
+    @result = {status: false, message: ''}
     if session[:wait_active_email]
       wait_user = User.find_by email: session[:wait_active_email]
       if wait_user.activation?
@@ -68,7 +68,7 @@ class UsersController < ApplicationController
   end
 
   def activation
-    active = UserActive.find_by token: params[:token]
+    active = UserActive.where(type_name: 'Active', token: params[:token], used: 0).order('created_at desc').first
     if active && !active.used?
       user = User.find active.user_id
       user.activation = 1
@@ -91,7 +91,48 @@ class UsersController < ApplicationController
   end
 
   def forget_password_confirm
+    @result = {status: false, message: ''}
+    if params[:user][:email].present?
+      user = User.find_by email: params[:user][:email]
+      return redirect_to(root_path) unless user
+      token = UserActive.generate_token
+      active = UserActive.new user_id: user.id, token: token, type_name: 'ForgetPassword'
+      url = File.join(Settings.blog.domain, "users/change_pw?token=#{token}")
+      if active.save && UserMailer.forget_password(user.email, url).deliver
+        @result[:status] = true
+        @result[:message] = user.email
+      else
+        flash.now[:error] = '邮件发送失败，请重试'
+        render 'forget_password', layout: 'register'
+      end
+    end
+  end
 
+  def change_pw
+    @token = params[:token]
+    active = UserActive.where(type_name: 'ForgetPassword', token: @token, used: 0).order('created_at desc').first
+    return redirect_to(root_path) unless active
+    if Time.now.to_i - active.created_at.to_i > 600
+      return redirect_to root_path
+    end
+    render 'change_pw', layout: 'register'
+  end
+
+  def change_pw_confirm
+    @token = params[:user][:token]
+    active = UserActive.where(type_name: 'ForgetPassword', token: @token, used: 0).order('created_at desc').first
+    return redirect_to(root_path) unless active
+    @user = User.find active.user_id
+    return redirect_to(root_path) unless @user
+    @user.password = params[:user][:password] || ''
+    @user.password_confirmation = params[:user][:password_confirmation]
+    if @user.save
+      flash[:success] = '重置密码成功，请登录'
+      redirect_to login_path
+    else
+      flash.now[:error] = @user.errors.full_messages.first
+      render 'change_pw', layout: 'register'
+    end
   end
 
   protected

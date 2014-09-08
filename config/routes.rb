@@ -93,6 +93,8 @@ Rails.application.routes.draw do
       get 'activation'
       get 'forget_password'
       post 'forget_password_confirm'
+      get 'change_pw'
+      post 'change_pw_confirm'
     end
   end
 
