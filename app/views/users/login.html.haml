@@ -17,7 +17,7 @@
     - elsif flash[:error].present?
       .alert.alert-danger
         %a.close{"data-dismiss"=>"alert"} &times;
-        %span= flash[:error]
+        %span= raw flash[:error]
     = form_for :user, url: login_confirm_users_path, role: 'form' do |f|
       .form-field.form-group
         = f.text_field :username, placeholder: '用户名', class: 'form-control username', required: true

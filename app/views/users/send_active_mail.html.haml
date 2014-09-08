@@ -1,0 +1,5 @@
+%h2.text-center
+  - if @result[:status]
+    = "激活邮件发送成功，请登录邮箱#{@result[:message]}进行激活。"
+  - else
+    = "激活邮件发送失败，#{link_to '点此', send_active_mail_users_path}重新发送"
