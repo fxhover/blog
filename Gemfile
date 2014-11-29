@@ -56,6 +56,9 @@ gem 'redcarpet'
 gem 'simple_fileupload'
 gem 'remotipart'
 
+#share article
+gem 'social-share-button'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

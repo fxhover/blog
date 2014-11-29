@@ -16,6 +16,7 @@
  *= require _font-awesome
  *= require _font-awesome-ie7.min
  *= require markdown-toolbar
+ *= require social-share-button
  */
 .body_content {
     margin-top: 60px;
@@ -229,6 +230,7 @@ h3 .icon {
 .new_comments li {
     margin-top: 10px;
 }
+
 
 
 

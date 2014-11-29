@@ -32,6 +32,8 @@
         = @article.star_count || 0
     %span.icon.icon-comments(data-toggle="tooltip" data-placement="bottom" title="评论")
       = @article.comments_count || 0
+    %span
+      = social_share_button_tag(@article.title)
   - unless @article.source.empty?
     %p
       转载：

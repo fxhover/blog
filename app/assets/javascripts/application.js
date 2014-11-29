@@ -19,6 +19,7 @@
 //= require respond.min.js
 //= require markdown-toolbar
 //= require jquery.remotipart
+//= require social-share-button
 //= require_tree .
 
 $.fn.twitter_bootstrap_confirmbox.defaults = {
