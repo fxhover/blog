@@ -1,4 +1,6 @@
 - if @result[:status]
   :plain
-    $("#comment_#{@comment.id}_body").html("#{@comment.content}");
+    $("#comment_#{@comment.id}_body").html("#{sanitize(@comment.content)}");
+    $('#article_comment_content').val("");
     location.hash = "#comment_#{@comment.id}";
+    $("#comment_form").html("#{escape_javascript(render partial: 'articles/comment_form', locals: {new_comment: true})}");

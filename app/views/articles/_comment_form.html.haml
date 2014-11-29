@@ -1,4 +1,6 @@
-= render partial: 'toolbar_upload_img', locals: {text_id: 'article_comment_content'}
+= render partial: 'articles/toolbar_upload_img', locals: {text_id: 'article_comment_content'}
+- if defined?(new_comment) && new_comment
+  - @comment = @article.comments.new
 .comment_form
   - url = @comment.new_record? ? article_comments_path(@article) : article_comment_path(@article, @comment)
   = form_for @comment, url: url, role: 'form', remote: true do |f|

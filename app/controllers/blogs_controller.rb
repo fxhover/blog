@@ -98,7 +98,7 @@ class BlogsController < ApplicationController
     result = {status: false, message: ''}
     if params[:content]
       result[:status] = true
-      result[:message] = markdown_parser params[:content]
+      result[:message] = ActionController::Base.helpers.sanitize(markdown_parser(params[:content]))
     end
     render json: result.to_json
   end

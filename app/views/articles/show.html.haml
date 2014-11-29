@@ -40,7 +40,7 @@
       = @article.source
 
   .panel.panel-dfault
-    .panel-body#article_content
+    .panel-body#article_content_show
       -#= raw markdown_parser(@article.content)
 
   %h3 评论：
@@ -58,5 +58,5 @@
 
 :javascript
   $(function(){
-    $('#article_content').html("#{escape_javascript markdown_parser(@article.content)}");
+    $('#article_content_show').html("#{escape_javascript sanitize(markdown_parser(@article.content))}");
   });
