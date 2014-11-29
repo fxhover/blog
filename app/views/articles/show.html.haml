@@ -38,9 +38,8 @@
       = @article.source
 
   .panel.panel-dfault
-    .panel-body
-      %p
-        = raw markdown_parser(@article.content)
+    .panel-body#article_content
+      -#= raw markdown_parser(@article.content)
 
   %h3 评论：
   #comments_content
@@ -55,3 +54,7 @@
         = link_to '登录', login_path
         后可评论
 
+:javascript
+  $(function(){
+    $('#article_content').html("#{escape_javascript markdown_parser(@article.content)}");
+  });
