@@ -18,7 +18,7 @@
       .alert.alert-danger
         %a.close{"data-dismiss"=>"alert"} &times;
         %span= raw flash[:error]
-    = form_for :user, url: login_confirm_users_path, role: 'form' do |f|
+    = form_for :user, url: login_confirm_users_path(from: params[:from].present? ? params[:from] : ''), role: 'form' do |f|
       .form-field.form-group
         = f.text_field :username, placeholder: '用户名', class: 'form-control username', required: true
       .form-field.form-group
