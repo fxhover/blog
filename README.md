@@ -67,6 +67,8 @@
     mkdir -p tmp/pids
 
     mkdir -p log 
+    
+    mkdir -p tmp/sockets
 
 ###拷贝启动服务文件###
 
