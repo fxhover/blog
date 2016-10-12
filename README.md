@@ -118,3 +118,17 @@
 
     http://blog.com
 
+##使用Capistrano部署
+
+```
+bundle install
+
+bundle exec cap production deploy:check
+
+cp ./config/*.yml /var/www/blog/shared/config/
+
+cp ./config/unicorn_capistrano.rb /var/www/blog/shared/config/unicorn.rb
+
+bundle exec cap production deploy
+```
+

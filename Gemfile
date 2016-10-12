@@ -60,7 +60,13 @@ gem 'remotipart'
 gem 'social-share-button'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :development do
+  gem 'capistrano', require: false
+  gem 'capistrano-rvm', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-unicorn', require: false
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
